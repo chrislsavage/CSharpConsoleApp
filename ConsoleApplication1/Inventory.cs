@@ -8,10 +8,15 @@ namespace ConsoleApplication1
 {
     class Inventory
     {
-        List<Product> items = new List<Product>
+
+        public Inventory()
         {
-            new Product() {Name= "Container", Price = 0 }
-        };
+            List<Product> items = new List<Product>
+            {
+                new Product() {Name= "Container", Price = 0 }
+            };
+        }
+       
 
         public void AddItem(Product item)
         {

@@ -17,7 +17,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             Product bag = new Product();
-            Console.WriteLine($"The Product's name is {bag.name}, and my price is {bag.price}" );
+            Console.WriteLine($"The Product's name is {bag.Name}, and my price is {bag.Price}" );
         }
     }
 }
