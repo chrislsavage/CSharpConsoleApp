@@ -8,7 +8,11 @@ namespace ConsoleApplication1
 {
     class View
     {
-        static void Introduction()
+        public View()
+        {
+
+        }
+        public void Introduction()
         {
             Console.WriteLine("Product Inventory:");
             Console.WriteLine("");
@@ -18,9 +22,14 @@ namespace ConsoleApplication1
             Console.WriteLine("3) Delete Inventory");
         }
 
-        static void AddItemName()
+         public void AddItemName()
         {
             Console.WriteLine("What is the name of the product to add?");
+        }
+
+        public void AddItemPrice()
+        {
+            Console.WriteLine("What is the price of the product?");
         }
     }
 }

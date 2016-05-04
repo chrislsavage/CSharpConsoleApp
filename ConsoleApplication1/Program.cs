@@ -6,35 +6,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    public interface Consoler
-        // interfaces can only contain function declarations
-    {
-
-    }
 
     class Program
     {
-        View view = new View();
-        Inventory myInventory = new Inventory();
-        static void Main(string[] args)
+
+        
+        static void Main()
         {
-            Program.view.Introduction();
-            int input = Console.Read();
-            
-        }
-
-        static void Input(int num)
-        {
-            switch (input)
-            {
-                case 1:
-                    myInventory.ListItems();
-                    break;
-                default:
-                    Console.WriteLine("That is not an option. Please try again")
-
-
-            }
+            Controller controller = new Controller();
+            controller.Run();
         }
     }
 }
