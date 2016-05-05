@@ -8,31 +8,45 @@ namespace ConsoleApplication1
 {
     class Inventory
     {
-        public List<Product> Items { get; set; }
+        private List<Product> Items;
 
         public Inventory()
         {
-             Items.Add(
-                new Product() {Name= "Container", Price = 0}
-            );
+            Items = new List<Product>();
+            Items.Add(new Product() { Name = "Container", Price = 0 });
         }
         public void AddItem(Product item)
         {
              Items.Add(item);
         }
 
-        public void DeleteItem(Product item)
+        public void DeleteItem(int num)
         {
-            Items.Remove(item);
+            Items.RemoveAt(num);
         }
 
         public void ListItems()
         {
-            foreach (var item in this.Items)
+            int counter = 1;
+            foreach (var item in Items)
             {
-                int counter = 1;
                 Console.WriteLine($"{counter}: Name: {item.Name}, Price: {item.Price}");
                 counter += 1;
+            }
+        }
+
+        public string ss = "ooo";
+
+        public string s
+        {
+            get
+            {
+
+                return "x";
+            }
+
+            set
+            {
             }
         }
     }

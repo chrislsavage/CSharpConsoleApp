@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class NotifyService
+    interface IMenu
     {
-        public void Notify(string message)
-        {
 
-        }
     }
 }

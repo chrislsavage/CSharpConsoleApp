@@ -8,18 +8,13 @@ namespace ConsoleApplication1
 {
     class View
     {
-        public View()
+        public void List()
         {
-
-        }
-        public void Introduction()
-        {
-            Console.WriteLine("Product Inventory:");
-            Console.WriteLine("");
             Console.WriteLine("Choose an Numbered Option");
             Console.WriteLine("1) List Inventory");
             Console.WriteLine("2) Add Inventory");
             Console.WriteLine("3) Delete Inventory");
+            Console.WriteLine("4) End");
         }
 
          public void AddItemName()
@@ -30,6 +25,21 @@ namespace ConsoleApplication1
         public void AddItemPrice()
         {
             Console.WriteLine("What is the price of the product?");
+        }
+
+        public void Delete()
+        {
+            Console.WriteLine("Which item would you like to delete?");
+        }
+
+        public void End()
+        {
+            Console.WriteLine("End Program");
+        }
+
+        public void Error()
+        {
+            Console.WriteLine("That is not an option. Please try again");
         }
     }
 }

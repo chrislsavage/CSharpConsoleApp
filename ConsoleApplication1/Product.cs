@@ -9,6 +9,6 @@ namespace ConsoleApplication1
     class Product
     {
         public string Name { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
     }
 }

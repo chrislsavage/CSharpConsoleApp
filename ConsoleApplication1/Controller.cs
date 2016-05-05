@@ -12,29 +12,49 @@ namespace ConsoleApplication1
         View view = new View();
         public void Run()
         {
-            view.Introduction();
+            view.List();
             Input(myInventory);
         }
 
         public void Input(Inventory inventory)
         {
-            int input = Console.Read();
+            string input = Console.ReadLine();
             switch (input)
             {
-                case 1:
+                case "1":
                     inventory.ListItems();
+                    Run();
                     break;
-                case 2:
+                case "2":
                     view.AddItemName();
                     string name = Console.ReadLine();
                     view.AddItemPrice();
-                    double price = Convert.ToDouble(Console.ReadLine());
+                    string strPrice = Console.ReadLine();
+                    decimal price = Convert.ToDecimal(decimal.Parse(strPrice).ToString("N"));
                     inventory.AddItem(new Product { Name = name, Price = price });
+                    Run();
                     break;
-                case 3:
-                     
+                case "3":
+                    view.Delete();
+                    inventory.ListItems();
+                    int num = Convert.ToInt16(Console.ReadLine()) ;
+                    if (num > inventory.ListCount)
+                    {
+                        inventory.DeleteItem(num - 1);
+                        view.List();
+                    }
+                    else
+                    {
+                        view.Error();
+                    }
+
+                    Run();
+                    break;
+                case "4":
+                    view.End();
+                    break;
                 default:
-                    Console.WriteLine("That is not an option. Please try again");
+                    view.Error();
                     Run();
                     break;
             };
